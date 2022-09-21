@@ -62,6 +62,7 @@ header {
   align-items: center;
   width: 90%;
   height: 70px;
+  justify-content: space-between;
 }
 .logo {
   flex-basis: 20%;
@@ -76,10 +77,24 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  font-size: 1.3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  cursor: pointer;
 }
 .navMenu li {
   margin-right: 20px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  transition: background-color 0.3s cubic-bezier(0.42, -0.08, 0, 0.28);
+  color: #222;
 }
+.navMenu li:hover {
+  background-color: #fff8e9;
+  border-radius: 0.6rem;
+  color: #8b6d07;
+}
+
 .menu {
   display: none;
 }
@@ -2031,4 +2046,128 @@ form .form-group label {
     font-weight: 300;
     color: #00923f;
   }
+}
+/* ===================================
+          DASHBOARD
+====================================== */
+
+.grid {
+  padding: 1.5rem;
+  width: 100%;
+  height: 90vh;
+  display: grid;
+  /* grid-area: auto;
+  grid-template-areas: "a b c" "a b c" "a b c"; */
+  grid-template-areas:
+    "left-sidebar head right-sidebar-up"
+    "left-sidebar main right-sidebar-down"
+    "left-sidebar main right-sidebar-down";
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: 1px 3px 4px rgba(4, 19, 61, 0.112);
+}
+
+.right-sidebar-down {
+  grid-area: right-sidebar-down;
+}
+
+.right-sidebar-up {
+  grid-area: right-sidebar-up;
+}
+.head {
+  grid-area: head;
+}
+.main {
+  grid-area: main;
+}
+.left-sidebar {
+  grid-area: left-sidebar;
+  background-color: #fff;
+}
+.left-sidebar .sidemenu-item {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  color: #0cbc8b;
+}
+
+.left-sidebar .sidemenu-item h5 {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+/* HEADER */
+.header button.vpn {
+  outline: none;
+  background-color: #eafff9;
+  color: #0d4e3e;
+  font-size: 1.1rem;
+  padding: 15px 25px;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.header button.vpn:hover {
+  background-color: hsl(41, 100%, 96%);
+  color: #5a3f04;
+  box-shadow: 1px 3px 5px #191b2928;
+}
+
+.header button.vpn:active {
+  background-color: hsl(41, 100%, 96%);
+  color: #5a3f04;
+  box-shadow: 1px 1px 3px #191b2928;
+}
+
+.header .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fcfcfc;
+  box-shadow: 0px 1px 3px #07052b1c;
+  padding: 0.7rem;
+  height: 4rem;
+  width: 40rem;
+  border-radius: 1rem;
+}
+
+.header .search input {
+  background-color: transparent;
+  outline: none;
+  width: 90%;
+  height: 95%;
+  border: none;
+}
+.header .search input::placeholder {
+  color: rgb(153, 153, 153);
+}
+
+.header .user {
+  display: flex;
+  align-items: center;
+}
+
+.header .user img {
+  border-radius: 50%;
+  width: 3.5rem;
+}
+.header .user h5 {
+  font-size: 1.3rem;
+  margin-left: 1.5rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
