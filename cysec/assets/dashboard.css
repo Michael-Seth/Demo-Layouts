@@ -179,6 +179,10 @@ nav .button {
   height: 100%;
   justify-content: space-between;
   align-content: space-between;
+
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
 }
 .box {
   background-color: rgb(22, 22, 22);
@@ -433,14 +437,17 @@ nav .button {
 
 /* HEAD */
 
-.head .dashboard-head h5 {
-  font-size: 1.6rem;
+.dashboard-head h5 {
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+  color: #b1b1b1;
 }
 .head .dashboard-head h3 {
   font-size: 4.8rem;
 }
 .head .dashboard-head p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  color: #707070;
 }
 .head .dashboard-img img {
   width: 15rem;
@@ -453,9 +460,10 @@ nav .button {
 }
 .main-dashboard .main-item {
   height: 14rem;
-  width: 18rem;
+  width: 20rem;
   border-radius: 1rem;
-  background-color: #1d1d1d;
+  border: 1px solid #444444;
+  /* background-color: #1d1d1d; */
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -474,11 +482,11 @@ nav .button {
 }
 .main-flex-left h3 {
   color: #ffffff;
-  font-size: 2.8rem;
+  font-size: 3.4rem;
 }
 
 .main-flex-left p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #fff;
 }
 .main-flex-left p span {
@@ -494,4 +502,51 @@ nav .button {
 canvas {
   width: 40% !important;
   height: 10rem !important;
+}
+.recent-labs {
+  margin-top: 3rem;
+}
+.table {
+  padding: 0 2rem;
+  align-items: stretch;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.head-row {
+  display: flex;
+  flex-direction: row;
+  padding: 0 2rem;
+  justify-content: space-between;
+}
+.table h5 {
+  font-size: 1.1rem;
+  color: #a8a8a8;
+  padding: 0.5rem 0;
+  display: block;
+  margin-bottom: 1rem;
+}
+.table .content-row {
+  border: 1px solid #444444;
+  border-radius: 1rem;
+}
+.table .name-row {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #494949;
+}
+.table .name-row span {
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  background-color: #d7fff2e7;
+  color: #004e22;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.table .name-row p {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 400;
 }
