@@ -21,7 +21,7 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #c7ffef;
+  background-color: rgba(13, 189, 139, 0.062);
 }
 
 /* Handle */
@@ -529,6 +529,9 @@ footer .footer-home img {
   padding: 45px 30px 20px 30px;
   box-shadow: 0px 3px 4px rgba(5, 24, 58, 0.233);
 }
+.container-item-a .wrapper .wrapper-box form {
+  height: 100%;
+}
 .container-item-a .wrapper .wrapper-box form > *:not(:last-child) {
   margin-bottom: 30px;
 }
@@ -611,7 +614,7 @@ footer .footer-home img {
   font-size: 1rem;
 }
 .container-item-b .bg-img {
-  background-color: #050505;
+  background-color: #004430;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -731,13 +734,13 @@ LABS COMPONENT
   flex-direction: column;
   width: 200px;
   margin: 60px 40px;
-  border-radius: 27px;
+  border-radius: 1.5rem;
   background-color: rgb(233, 233, 233);
   box-shadow: 0px 3px 6px rgb(22, 37, 30);
 }
 .lab-box .labs-img img {
   width: 100%;
-  border-radius: 27px 27px 0 0;
+  border-radius: 1.5rem 1.5rem 0 0;
   height: 140px;
 }
 
@@ -751,8 +754,17 @@ LABS COMPONENT
   font-size: 1.2rem;
 }
 .lab-box .btn-e {
-  padding: 7px 12px;
+  padding: 10px 0;
   font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #0cbc8b;
+  box-shadow: 0 1px 2px rgba(11, 20, 71, 0.233);
+  transition: all 0.2s ease-in-out;
+}
+
+.lab-box .btn-e:hover {
+  background-color: #119771;
+  box-shadow: 0 3px 4px rgba(11, 20, 71, 0.233);
 }
 
 .prev,

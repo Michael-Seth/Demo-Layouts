@@ -12,22 +12,23 @@
 html {
   height: 100%;
   width: 100%;
-  font-size: 65%; /* converting 16px to 1rem*/
+  font-size: 64%; /* converting 16px to 1rem*/
   background-color: #212122;
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 1.2rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #c7ffef;
+  background: transparent;
+  width: 1.4rem;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #69927b;
+  background: #18e6a1;
   border-radius: 5px;
 }
 
@@ -58,7 +59,7 @@ header {
   margin: 0 30px 0 30px;
   align-items: center;
   width: 90%;
-  height: 70px;
+  height: 80px;
   justify-content: space-between;
 }
 .logo {
@@ -94,10 +95,13 @@ nav {
 
 .menu {
   display: none;
+  background-color: transparent;
+  outline: none;
+  border: none;
 }
 .line {
   fill: none;
-  stroke: #00923f;
+  stroke: #0cbc8b;
   stroke-width: 6;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -159,7 +163,7 @@ nav .button {
 }
 .grid .flex-one {
   flex-basis: 18%;
-  height: 100%;
+  height: 97%;
   position: sticky;
   top: 0;
   align-self: flex-start;
@@ -176,7 +180,7 @@ nav .button {
   flex-basis: 18%;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 98%;
   justify-content: space-between;
   align-content: space-between;
 
@@ -193,12 +197,14 @@ nav .button {
 }
 
 .right-sidebar-down {
-  height: 35%;
-  background-color: #415eff;
+  height: 32%;
+  background-color: #20075c;
+  position: relative;
 }
 
 .right-sidebar-up {
-  height: 60%;
+  height: 63%;
+  overflow: hidden;
 }
 .head {
   display: flex;
@@ -238,9 +244,25 @@ nav .button {
 .left-sidebar .sidemenu .sidemenu-item:hover {
   box-shadow: 1px 1px 5px #0a042e28;
   border-radius: 0px 7px 7px 0px;
+  background-color: #1d1d1d;
+}
+.left-sidebar .sidemenu .sidemenu-item.active {
+  box-shadow: 1px 1px 5px #0a042e28;
+  border-radius: 0px 7px 7px 0px;
+  background-color: #1d1d1d;
 }
 
 .left-sidebar .sidemenu .sidemenu-item:hover:before {
+  content: "";
+  position: absolute;
+  height: 75%;
+  width: 5px;
+  border-radius: 0px 4px 4px 0px;
+  background-color: #0cbc8b;
+  top: 15%;
+  left: 0;
+}
+.left-sidebar .sidemenu .sidemenu-item.active:before {
   content: "";
   position: absolute;
   height: 75%;
@@ -268,14 +290,19 @@ nav .button {
   font-weight: 600;
 }
 .settings {
-  margin: 0 4rem;
+  width: 70%;
+  margin: auto;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 1rem 2rem;
+  padding: 1rem;
   border-radius: 5px;
   border: 1px solid #415eff;
   cursor: pointer;
+}
+
+.settings > * {
+  margin: auto;
 }
 
 .settings h5 {
@@ -323,10 +350,10 @@ nav .button {
 }
 
 .divider {
-  width: 80%;
-  height: 1px;
-  background-color: #cccccc;
-  margin: auto;
+  width: 90%;
+  height: 0.1px;
+  background-color: #525252;
+  margin: 2rem auto;
 }
 /* HEADER */
 .header button.vpn {
@@ -337,7 +364,7 @@ nav .button {
   padding: 15px 25px;
   cursor: pointer;
   border: none;
-  border-radius: 1rem;
+  border-radius: 0.6rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -383,13 +410,13 @@ nav .button {
   align-items: center;
 }
 
-.header .user img {
+.user img {
   border-radius: 50%;
   width: 3.5rem;
   padding: 0.2rem;
   border: 2px solid #18e6a1;
 }
-.header .user h5 {
+.user h5 {
   font-size: 1.3rem;
   margin-left: 1.5rem;
   font-weight: 600;
@@ -412,7 +439,7 @@ nav .button {
   background-size: cover;
   border-radius: 1.2rem;
   background-image: url("./img/blog-2.jpg");
-  height: 15rem;
+  height: 12rem;
 }
 .right-sidebar-up .recent-excerpt {
   font-size: 1.2rem;
@@ -435,12 +462,14 @@ nav .button {
   box-shadow: 0 2px 2px #1f1e3a1c;
 }
 
-/* HEAD */
+/* ======================================
+              DASHBOARD
+=========================================*/
 
 .dashboard-head h5 {
-  font-size: 1.4rem;
-  margin-bottom: 3rem;
-  color: #b1b1b1;
+  font-size: 1.6rem;
+  color: #ececec;
+  margin: 1rem 0 1.5rem 0.5rem;
 }
 .head .dashboard-head h3 {
   font-size: 4.8rem;
@@ -457,10 +486,10 @@ nav .button {
 .main-dashboard {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 3rem;
 }
 .main-dashboard .main-item {
-  height: 14rem;
-  width: 20rem;
+  width: 30%;
   border-radius: 1rem;
   border: 1px solid #444444;
   /* background-color: #1d1d1d; */
@@ -499,14 +528,33 @@ nav .button {
   background-color: #e4fff64b;
 }
 
+.main-flex-left a {
+  font-size: 1.05rem;
+  background-color: #18e6a1;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.7rem 0;
+  color: #212122;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+}
+
+.main-flex-left a:nth-child(2) {
+  background-color: #0d27b8;
+}
+
 canvas {
   width: 40% !important;
   height: 10rem !important;
 }
-.recent-labs {
-  margin-top: 3rem;
-}
+
+/* ==============================
+                LABS 
+=================================*/
 .table {
+  margin-top: 3rem;
   padding: 0 2rem;
   align-items: stretch;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -517,6 +565,10 @@ canvas {
   flex-direction: row;
   padding: 0 2rem;
   justify-content: space-between;
+}
+
+.head-row h5:nth-child(3) {
+  flex-basis: 40%;
 }
 .table h5 {
   font-size: 1.1rem;
@@ -535,6 +587,8 @@ canvas {
   padding: 1rem;
   align-items: center;
   justify-content: space-between;
+}
+.table .name-row:not(:last-child) {
   border-bottom: 1px solid #494949;
 }
 .table .name-row span {
@@ -547,6 +601,384 @@ canvas {
 }
 .table .name-row p {
   color: #fff;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 400;
+}
+
+.table .name-row p:nth-child(3) {
+  flex-basis: 50%;
+}
+.table .name-row p:nth-child(4) {
+  color: #fff;
+  cursor: pointer;
+  background-color: #415eff;
+  padding: 1rem 1.4rem;
+  border-radius: 5px;
+}
+
+/* ================================
+              TABS  
+================================= */
+[data-tab-content] {
+  display: none;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+/* ================================
+              VPN  
+================================= */
+.download-vpn {
+  height: 60vh;
+}
+.download-vpn img {
+  width: 25rem;
+  margin: auto;
+  display: block;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.download-vpn button {
+  text-align: center;
+  display: block;
+  margin: auto;
+  border: none;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  background-color: #415eff;
+  padding: 1.6rem 3rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.download-vpn button:hover {
+  background-color: #0d27b8;
+  color: #e2e2e2;
+  box-shadow: 1px 6px 8px #0c0c0c;
+}
+
+.download-vpn button:active {
+  background-color: #0d27b8;
+  color: #e2e2e2;
+  box-shadow: 1px 2px 3px #030303;
+}
+/* ================================
+              LEADER BOARD
+=================================== */
+#leadersboard .dashboard-head h5 {
+  font-size: 1.6rem;
+  color: #ececec;
+  margin: 1.5rem;
+}
+#leadersboard .recent-labs .table .content-row .name-row span {
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: #18e6a1;
+  margin: 1.5rem;
+}
+
+/* ================================
+              Notification
+=================================== */
+.notification .head {
+  padding: 0 0 8px 0;
+  border-bottom: 1px solid #ffffff28;
+}
+.notification .head h5 {
+  display: inline;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.notification .head svg {
+  float: right;
+  border-radius: 50%;
+  padding: 0.4rem;
+  border: 1px solid #ffffff;
+}
+.notification .head .bell {
+  position: relative;
+}
+.notification .head .bell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff343e;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.message .message-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -1.5rem 1rem 0;
+}
+
+.message .message-head img {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.message .message-head h5 {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+  float: right;
+}
+.message .message-body p {
+  font-size: 1rem;
+}
+
+/* =================================
+            RESPONSIVE
+=====================================*/
+.search-m {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #212122;
+  box-shadow: 0px 1px 3px #07052b1c;
+  padding: 0.7rem;
+  height: 4rem;
+  margin: auto;
+  width: 95%;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-m input {
+  background-color: transparent;
+  outline: none;
+  width: 90%;
+  height: 95%;
+  border: none;
+}
+.search-m input::placeholder {
+  color: #ddd;
+}
+
+button.vpn-mobile {
+  display: none;
+  outline: none;
+  width: 20%;
+  float: right;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #1ebd88;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.notification-mobile {
+  background-color: #0d27b8;
+  border-radius: 1.3rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  display: none;
+}
+
+.notification-mobile .head {
+  padding: 0 0 8px 0;
+  border-bottom: 1px solid #ffffff28;
+}
+.notification-mobile .head h5 {
+  display: inline;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.notification-mobile .head svg {
+  float: right;
+  border-radius: 50%;
+  padding: 0.4rem;
+  border: 1px solid #ffffff;
+}
+.notification-mobile .head .bell {
+  position: relative;
+}
+.notification-mobile .head .bell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff343e;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  z-index: 100;
+}
+.left-sidebar .user {
+  display: none;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  position: absolute;
+  bottom: 1rem;
+  width: 80%;
+  justify-content: space-around;
+}
+
+.social-icons img {
+  width: 3rem;
+  padding: 0.8rem;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+@media only screen and (max-width: 720px) {
+  main {
+    position: relative;
+  }
+  .search-m {
+    display: flex;
+  }
+  .left-sidebar .user {
+    display: flex;
+    margin: 2.5rem 0 1rem 1.5rem;
+  }
+  button.vpn-mobile {
+    display: block;
+  }
+  .header .vpn {
+    display: none;
+  }
+  .header .search {
+    display: none;
+  }
+  .header .user {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  .grid .flex-three {
+    display: none;
+  }
+
+  .grid {
+    display: block;
+    padding: 1.5rem;
+    height: 90vh;
+    width: 100%;
+    overflow: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .box.left-sidebar {
+    width: 80%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 0;
+    background-color: rgb(22, 22, 22);
+  }
+
+  .grid .flex-one {
+    display: none;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    top: 80px;
+    left: 0rem;
+    z-index: 100;
+    overflow: hidden;
+  }
+
+  .grid .flex-one::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    z-index: -10;
+    background-color: #030303d7;
+  }
+
+  .sidemenu {
+    margin-top: 2rem;
+  }
+  .divider {
+    margin: 0 0 1rem 0;
+    width: 100%;
+  }
+  .left-sidebar .logout {
+    margin: 2rem;
+  }
+  .left-sidebar h4 {
+    display: none;
+  }
+  .settings {
+    margin: 2rem;
+    width: 50%;
+  }
+  .head .dashboard-head h3 {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+  }
+  .dashboard-head h5 {
+    font-size: 1.2rem;
+    color: #ececec;
+    margin: 0;
+  }
+  .main-dashboard {
+    margin-top: 2rem;
+  }
+  .main-flex-left h4 {
+    font-size: 0.8rem;
+  }
+  .main-flex-left h3 {
+    color: #ffffff;
+    font-size: 2.4rem;
+    margin: 1rem 0;
+  }
+  .table {
+    padding: 0 1.2rem;
+  }
+  .main-flex-left p {
+    display: none;
+  }
+  .notification-mobile {
+    display: block;
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+  }
+  .head-row h5:nth-child(3) {
+    display: none;
+  }
+  .name-row p:nth-child(3) {
+    display: none;
+  }
 }
