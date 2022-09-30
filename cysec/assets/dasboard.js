@@ -30,9 +30,11 @@ function toggleMenu() {
 
   if (menu.style.display === "none") {
     menu.style.display = "block";
+    hamburger.classList.add("opened");
     line.style.stroke = "#0cbc8b";
   } else {
     menu.style.display = "none";
+    hamburger.classList.remove("opened");
     line.style.stroke = "#00923f";
   }
 }
