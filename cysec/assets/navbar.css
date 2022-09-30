@@ -519,7 +519,13 @@ footer .footer-home img {
 .container-item-a .wrapper h2 {
   font-size: 3.4rem;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
+}
+
+.container-item-a .wrapper p {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .container-item-a .wrapper .wrapper-box {
